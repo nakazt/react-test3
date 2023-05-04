@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "@/styles/Home.module.css";
 import { Main } from "@/components/Main";
 
 export default function Home() {
@@ -12,7 +13,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Main page="About" />
+      <Main
+        page="About"
+        code={<code className={styles.code}>pages/about.js</code>}
+        onClick={() => alert("clicked on about page")}
+      />
     </>
   );
 }

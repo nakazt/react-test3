@@ -12,8 +12,9 @@ export function Main(props) {
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
-          <code className={styles.code}>pages/{props.page}.js</code>
+          {props.code}
         </p>
+        <button onClick={props.onClick}>button</button>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
