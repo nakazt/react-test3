@@ -5,13 +5,14 @@ import { Links } from "@/components/Links";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Main() {
+export function Main(props) {
+  console.log(props);
   return (
     <main className={`${styles.main} ${inter.className}`}>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
-          <code className={styles.code}>pages/index.js</code>
+          <code className={styles.code}>pages/{props.page}.js</code>
         </p>
         <div>
           <a
