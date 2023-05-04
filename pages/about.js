@@ -13,11 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Main
-        page="About"
-        code={<code className={styles.code}>pages/about.js</code>}
-        onClick={() => alert("clicked on about page")}
-      />
+      <Main page="About" onClick={() => alert("clicked on about page")}>
+        {<code className={styles.code}>pages/about.js</code>}
+      </Main>
     </>
   );
 }
