@@ -6,7 +6,7 @@ import { Links } from "@/components/Links";
 const inter = Inter({ subsets: ["latin"] });
 
 export function Main(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <main className={`${styles.main} ${inter.className}`}>
       <div className={styles.description}>
