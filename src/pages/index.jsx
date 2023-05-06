@@ -3,6 +3,8 @@ import styles from "@/src/styles/Home.module.css";
 import { Main } from "@/src/components/Main";
 import { Header } from "@/src/components/Header";
 import { useCallback } from "react";
+import Link from "next/link";
+
 
 // const handleClick = (e) => {
 //   console.log(e.target.href);
@@ -28,9 +30,9 @@ export default function Home() {
 
       <Header />
 
-      <a href="/about" onClick={handleClick}>
+      <Link href="/about" onClick={handleClick}>
         [ event Test button ]
-      </a>
+      </Link>
 
       <Main page="About" onClick={() => alert("clicked on index page")}>
         {<code className={styles.code}>pages/index.js</code>}
