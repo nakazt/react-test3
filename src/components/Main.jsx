@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./Main.module.css";
-import { Links } from "@/components/Links";
+import { Links } from "@/src/components/Links";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +14,7 @@ export function Main(props) {
           Get started by editing&nbsp;
           {props.children}
         </p>
-        <button onClick={props.onClick}>button</button>
+        <button className={styles.button} onClick={props.onClick}>button</button>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

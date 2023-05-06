@@ -34,6 +34,17 @@
   border-radius: var(--border-radius);
 }
 
+.button {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  box-shadow: 4px 4px 4px #888;
+}
+
+.button:hover {
+  background-color: #fcc;
+}
+
 .center {
   display: flex;
   justify-content: center;
