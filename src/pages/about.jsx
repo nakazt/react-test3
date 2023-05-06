@@ -14,7 +14,7 @@ export default function Home() {
 
       <Header />
 
-      <Main page="About" onClick={() => alert("clicked on about page")}>
+      <Main onClick={() => alert("clicked on about page")}>
         {<code className={styles.code}>pages/about.js</code>}
       </Main>
     </>

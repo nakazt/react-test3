@@ -42,7 +42,7 @@ export default function Home() {
         [ event Test button ]
       </Link>
 
-      <Main page="About" onClick={() => alert("clicked on index page")}>
+      <Main onClick={() => alert("clicked on index page")}>
         {<code className={styles.code}>pages/index.js</code>}
       </Main>
     </>
