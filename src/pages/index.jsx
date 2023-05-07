@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "@/src/styles/Home.module.css";
 import { Main } from "@/src/components/Main";
 import { Header } from "@/src/components/Header";
-import { useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 // const handleClick = (e) => {
@@ -11,19 +11,16 @@ import Link from "next/link";
 // };
 
 export default function Home() {
-  const foo = 1;
+  const [count, setCount] = useState(1);
 
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
-  }, []);
+  const handleClick = (e) => {
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+  };
 
   useEffect(() => {
-    console.log("mount");
     document.body.style.backgroundColor = "lightblue";
     return () => {
-      console.log("unmount");
       document.body.style.backgroundColor = "";
     };
   }, []);
@@ -38,9 +35,8 @@ export default function Home() {
 
       <Header />
 
-      <Link href="/about" onClick={handleClick}>
-        [ event Test button ]
-      </Link>
+      <h1>{count}</h1>
+      <button onClick={handleClick}>[ state Test button ]</button>
 
       <Main onClick={() => alert("clicked on index page")}>
         {<code className={styles.code}>pages/index.js</code>}
