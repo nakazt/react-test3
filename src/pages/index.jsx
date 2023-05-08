@@ -12,6 +12,8 @@ import Link from "next/link";
 
 export default function Home() {
   const [count, setCount] = useState(1);
+  const [text, setText] = useState("");
+  const [isShow, setIsShow] = useState(true);
 
   const handleClick = useCallback(() => {
     console.log(count);
@@ -20,12 +22,24 @@ export default function Home() {
     }
   }, [count]);
 
+  const handleDisplay = useCallback(() => {
+    setIsShow((isShow) => !isShow);
+  }, []);
+
+  const handleChange = useCallback((e) => {
+    if (e.target.value.length > 5) {
+      alert("text too long");
+      return;
+    }
+    setText(e.target.value);
+  }, []);
+
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
     return () => {
       document.body.style.backgroundColor = "";
-    };
-  }, []);
+    };  
+  }, []);  
 
   return (
     <>
@@ -37,8 +51,10 @@ export default function Home() {
 
       <Header />
 
-      <h1>{count}</h1>
+      {isShow ? <h1>{count}</h1> : null}
       <button onClick={handleClick}>[ state Test button ]</button>
+      <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
+      <input type="text" value={text} onChange={handleChange} />
 
       <Main onClick={() => alert("clicked on index page")}>
         {<code className={styles.code}>pages/index.js</code>}
