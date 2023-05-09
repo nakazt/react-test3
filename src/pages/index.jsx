@@ -16,14 +16,14 @@ export default function Home() {
   const [isShow, setIsShow] = useState(true);
 
   const handleClick = useCallback(() => {
-    console.log(count);
+    // console.log(count);
     if (count < 10) {
-      setCount((count) => count + 1);
+      setCount((prevCount) => prevCount + 1);
     }
   }, [count]);
 
   const handleDisplay = useCallback(() => {
-    setIsShow((isShow) => !isShow);
+    setIsShow((prevIsShow) => !prevIsShow);
   }, []);
 
   const handleChange = useCallback((e) => {
